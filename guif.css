@@ -1,0 +1,115 @@
+*{
+    font-family: Arial;
+}
+body{
+    background: #ffffff;
+    background: linear-gradient(-90deg ,rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 50%);
+}
+li{
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight:500;
+}
+nav ul li[class = "white"]{
+    color: rgba(255, 255, 255, 0.69);
+    
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+#title{
+    color: white;
+    font-size: 3vw;
+}
+#username{
+    width: 25vw;
+    height: 7vh;
+    background: transparent;
+    border: 2px solid rgb(172, 172, 172);
+    outline: none;
+    border-radius: 5px;
+}
+nav{
+    background-color: rgba(128, 128, 128, 0.237);
+    padding: 5px;
+    border-radius: 5px;
+}
+#leftDiv{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    flex-wrap: wrap;
+}
+#inputCard{
+    background-color: rgb(255, 255, 255);
+    width: 40vw;
+    min-height: 15vh;
+    border-radius: 20px;
+    box-shadow: -5px 5px 5px 5px rgb(69, 69, 69);
+    padding-right: 10px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    transition: 400ms ease;
+}
+#inputCard:hover{
+    scale: 1.04;
+}
+#inputCard p{
+    font-size: 15px;
+    color: grey;
+    font-weight: 100;
+}
+.outputCard{
+    background-color: rgb(255, 255, 255);
+    width: 40vw;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: -5px 5px 5px 5px rgb(69, 69, 69);
+    padding-right: 10px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: 400ms ease;
+}
+.outputCard:hover{
+    scale: 1.04;
+}
+#avatarImg{
+    height: 45px;
+    margin-right: 20px;
+}
+p{
+    margin-right: 20px;
+}
+#fetchBtn{
+    border: none;
+    background-color: rgb(47, 47, 47);
+    color: #ffff;
+    height: 7vh;
+    border-radius: 5px;
+    min-width: 4vw;
+    transition: 100ms ease-in;
+}
+#fetchBtn:hover{
+    cursor: pointer;
+    scale: 1.1;
+    background-color: grey;
+}
+#rightDiv{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    flex-wrap: wrap;
+}
+#stomach{
+    display: flex;
+}

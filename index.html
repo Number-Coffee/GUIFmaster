@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guif.css">
+</head>
+<body>
+    <h6 style="color: grey;"> Enoch Olubiyi May 27th 2025</h6>
+    <nav id="navBar">
+        <ul>
+            <li class="white"><a>Home</a></li>
+            <li class="white"><a>FAQ</a></li>
+            <li><a>Add-On</a></li>
+            <li><a>Change Log</a></li>
+        </ul>
+    </nav>
+    <div id="stomach">
+        <div id="leftDiv">
+        <h1 id="title"> GUIFmaster </h1>
+        <div id="inputCard">
+            <p> Insert your github username. </p>
+            <input id = "username" type="text" placeholder="MyVeryCoolUsername">
+            <input id="fetchBtn" type="button" value="Fetch Info">
+        </div>
+        <div class="outputCard">
+            <img id="avatarImg" src="" alt="Avatar Image">
+            <p style="font-weight: bold;"> Location: <p id="location"> </p></p>
+            <p id="bio"> </p>
+            <p style="font-weight: bold;"> Name: <a id="name"> </a></p>
+            <p style="font-weight: bold;"> Followers: <p id="followers"> </p></p>
+            <p style="font-weight: bold;"> Repos: <p id="repos"></p> </a></p>
+        </div>
+    </div>
+    <div id="rightDiv">
+        <h1> Github User Information Fetcher</h1>
+        <div class="outputCard">
+            <h3> I recently coded this website which utilizes the fetch() method in an asynchronous function to access the Github API and retrieve user data. This website has fairly equal parts HTML, CSS and Javascript. The CSS also utilizes flexbox and can dynamically change depending on the device.</h3>
+            <h3> This project was a huge stepping stone in my web development as a whole; it showcased a lot of new skills I have been slowly learning. While this website might not be the best or nicest looking, I am proud to present it to all of you. (you can access more data by inspect elementing, it prints the json() data in the console.)</h3>
+        </div>
+    </div>
+    </div>
+    
+
+
+<script>
+    document.getElementById("fetchBtn").addEventListener("click", ()=>{
+        fetchData()
+    })
+    document.addEventListener("keypress",(event) =>{
+        if(event.key === "Enter"){
+            fetchData()
+        }
+    })
+    async function fetchData() {
+        let username = document.getElementById("username").value
+        if(username === ""){
+            alert("You MUST type in a username!")
+            return
+        }
+        try{
+            const response = await fetch(`https://api.github.com/users/${username}`)
+            if(!response.ok){
+                throw new Error("Could not fetch data")
+            }
+            const data = await response.json()
+            console.log(data)
+
+            document.getElementById("avatarImg").src = data.avatar_url
+            document.getElementById("location").innerText = data.location
+            document.getElementById("bio").innerText = data.bio
+            document.getElementById("name").innerText = data.name
+            document.getElementById("followers").innerText = data.followers
+            document.getElementById("repos").innerText = data.public_repos
+            document.getElementById("name").href = data.blog
+        }
+        catch(error){
+            console.error(error)
+            alert("505: Username does not exist.")
+        }
+    }
+</script>
+</html>
